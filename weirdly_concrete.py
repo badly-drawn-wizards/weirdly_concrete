@@ -135,7 +135,7 @@ def meeting_marbles(l, m):
 def ive_lost_my_marbles(k, n):
     w = dimer(k*n)
     m = marbles(n, w)
-    ch = convex_hull(w)
+    ch = convex_hull(m)
     l = longest_line(ch)
     mm = meeting_marbles(l, m)
     return (w, m, ch, l, mm)
