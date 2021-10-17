@@ -4,7 +4,7 @@ from itertools import chain, count, product
 from math import atan2, pi as PI
 from statistics import mean
 from random import choice
-from sys import exit
+from sys import exit, argv
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -144,7 +144,7 @@ def plot_walk(w, m, ch, l, mm):
     (wxs, wys) = zip(*w)
     (lxs, lys) = zip(*l)
     (mxs, mys) = zip(*m)
-    (mmxs, mmys) = zip(*mm)
+    (mmxs, mmys) = zip(*mm) if mm else ([], [])
 
     fig, ax = plt.subplots()
 
@@ -197,4 +197,12 @@ def stat_main():
         print("Stdev:", stdev)
 
 if __name__ == '__main__':
-    stat_main()
+    mode = 'plot'
+    if len(argv) > 1:
+        mode = argv[1]
+    if mode == 'plot':
+        plot_main()
+    elif mode == 'stat':
+        stat_main()
+    else:
+        print("Invalid argument. Must be 'plot' or 'stat")
