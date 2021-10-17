@@ -2,13 +2,15 @@
 This is a quick hack implementation of a simulator for [xkcd 2529's weirdly concrete problem](https://xkcd.com/2529). This is barely tested and I suck at computational geometry, so this implementation is likely not correct.
 
 # How does it work
-I generate self-avoiding walks using the dimer method described in (this notebook)[https://github.com/gabsens/SelfAvoidingWalk/blob/master/SAW.ipynb]. There is apparently some more fancy stuff, but I haven't gotten to that.
+I generate self-avoiding walks using the dimer method described in (this notebook)[https://github.com/gabsens/SelfAvoidingWalk]. There is apparently some more fancy stuff, but I haven't gotten to that.
 
 To find the largest distance line I find the convex hull using a Grahan scan and from that find antipodal points using the rotating caliper technique and take the maximal pair.
 
 To find colinear points I just got lazy and brute forced it.
 
 # How do I run it
+
+The program depends on matplotlib and numpy.
 
 There are two entry points:
 
